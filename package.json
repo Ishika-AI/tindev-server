@@ -1,0 +1,13 @@
+{
+  "name": "tindev-server",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "build": ""
+  },
+  "devDependencies": {
+    "nodemon": "1.19.1"
+  }
+}

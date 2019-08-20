@@ -4,10 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "build": ""
+    "dev": "nodemon src/index.ts",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports"
   },
   "devDependencies": {
-    "nodemon": "1.19.1"
+    "nodemon": "1.19.1",
+    "sucrase": "3.10.1",
+    "typescript": "3.5.3"
   }
 }

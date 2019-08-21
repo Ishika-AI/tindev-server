@@ -8,7 +8,13 @@
     "clean": "rm -rf dist",
     "build": "yarn clean && sucrase ./src -d ./dist --transforms typescript,imports"
   },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.17.1"
+  },
   "devDependencies": {
+    "@types/cors": "2.8.6",
+    "@types/express": "4.17.1",
     "@typescript-eslint/eslint-plugin": "2.0.0",
     "@typescript-eslint/parser": "2.0.0",
     "eslint": "^6.2.1",

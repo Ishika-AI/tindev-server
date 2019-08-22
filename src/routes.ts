@@ -10,6 +10,7 @@ routes.get('/', (req: Request, res: Response): Response => {
   return res.json({ message: 'TINDEV BACKEND' })
 })
 
+routes.get('/devs', DevsController.index)
 routes.post('/devs', DevsController.store)
 routes.post('/devs/:idDev/like', LikeController.store)
 routes.post('/devs/:idDev/dislike', DislikeController.store)

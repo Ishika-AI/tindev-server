@@ -5,6 +5,22 @@ import Dev from '../models/DevModel'
 
 // INDEX, SHOW, STORE, UPDATE, DELETE
 
+const index = async (req: Request, res: Response): Promise<Response> => {
+  const { user } = req.headers
+
+  const loggedDev = await Dev.findById(user)
+
+  const users = await Dev.find({
+    $and: [
+      { _id: { $ne: user } },
+      { _id: { $nin: loggedDev.likes } },
+      { _id: { $nin: loggedDev.dislikes } }
+    ]
+  })
+
+  return res.json(users)
+}
+
 const store = async (req: Request, res: Response): Promise<Response> => {
   const { username } = req.body
 
@@ -28,4 +44,7 @@ const store = async (req: Request, res: Response): Promise<Response> => {
   return res.json(dev)
 }
 
-export default store
+export default {
+  index,
+  store
+}
